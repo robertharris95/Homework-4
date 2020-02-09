@@ -31,6 +31,16 @@
             <button type="button" class="btn btn-info btn-lg btn-block" id = "start" style= "visibility:visible">
                 Start the Game!
             </button>
+
+         <!-- Username input  -->
+         <div class="card" style= "visibility:hidden" id = "name">
+         <form>
+                 Username:<br>
+                 <input type="text" name="username" id = "usernamein">
+                 <input type="submit" value="Submit"><br>
+         </form> 
+        </div>
+
         <main class="card" id = "quiz" style= "visibility:hidden">
              <!-- Heading to display the time remaining -->
             <div class="card-header">
@@ -48,18 +58,25 @@
 
                      <!-- 4 buttons to display each answer choice -->
                     <footer class="card-footer"> 
+                        <!-- Answer choice A  -->
                             <button type="button" class="btn btn-info btn-sm" id = "A">
                                     
                             </button>
+
                             <br>
+                        <!-- Answer choice B  -->
                             <button type="button" class="btn btn-info btn-sm" id = "B">
                                     
                             </button>
+
                             <br>
+                        <!-- Answer choice C  -->
                             <button type="button" class="btn btn-info btn-sm" id = "C">
                                     
                             </button>
+
                             <br>
+                        <!-- Answer choice D  -->
                             <button type="button" class="btn btn-info btn-sm" id = "D">
 
                             </button>
@@ -71,20 +88,32 @@
         
        
         <!-- Display of the high scores -->
-
+        <div class="card" style= "visibility:hidden" id = "score">
+                <div class="card-body">
+                        <table style="width:100%">
+                                <tr>
+                                  <th>Username</th>
+                                  <th>Score</th>
+                                </tr>
+                                <tr>
+                                  <td class= "username"></td>
+                                  <td class="points"></td>
+                                </tr>
+                        </table>
+                </div>
+        </div>
         
 
+       
 
 
 
 
 
 
-        <!-- Background image credits -->
-        <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@impatrickt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Patrick Tomasso"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Background image by:Patrick Tomasso</span></a>
-
-
-
+<!-- Background image credits -->
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@impatrickt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Patrick Tomasso"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Background image by:Patrick Tomasso</span></a>
+<!-- Link script  -->
 <script src = "script.js"></script>
     </body>
 </html>

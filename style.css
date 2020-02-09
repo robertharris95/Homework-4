@@ -6,3 +6,15 @@ h1{
     text-align: center;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+th{
+    background-color: rgb(172, 172, 172);
+}
+#score{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
