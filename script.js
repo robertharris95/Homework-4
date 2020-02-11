@@ -129,7 +129,6 @@ var useranswers = [] ;
                 buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerA.textContent);
-                console.log(useranswers);
                 // Next Question 
                 i++;
                 question.textContent = exam[i].q;
@@ -143,7 +142,6 @@ var useranswers = [] ;
                 buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerB.textContent);
-                console.log(useranswers);
                 // Next Question 
                 i++;
                 question.textContent = exam[i].q;
@@ -157,7 +155,6 @@ var useranswers = [] ;
                  buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerC.textContent);
-                console.log(useranswers);
                 // Next Question 
                 i++;
                 question.textContent = exam[i].q;
@@ -171,7 +168,6 @@ var useranswers = [] ;
                  buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerD.textContent);
-                console.log(useranswers);
                 // Next Question 
                 i++;
                 question.textContent = exam[i].q;
