@@ -201,7 +201,6 @@ var useranswers = [] ;
             var userArray = []
             userArray.push(usernamein.value)
             localStorage.setItem("Name", userArray);
-            console.log(userArray);
             highscore();
         });
 
@@ -222,7 +221,7 @@ var useranswers = [] ;
             
              var finalArray = []
              finalArray.push(final)
-             console.log(finalArray)
+             
 
         // Push final score to local storage
         localStorage.setItem("Score", finalArray);
