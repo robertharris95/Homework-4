@@ -92,11 +92,11 @@ var useranswers = [] ;
 // Function to start the quiz and run it
 
         // Make Username input invisible
-        username.style.visibility = "hidden"
+        username.style.display = "none"
         // Make Quiz visible
-        quiz.style.visibility = "visible";
+        quiz.style.display = "block";
         // Hide Start Button
-        start.style.visibility = "hidden";
+        start.style.display = "none";
 
         // Start the timer 
         var secondsLeft = 60;
@@ -190,9 +190,9 @@ var useranswers = [] ;
     // Make the Username input visible 
     function input(){
         // Make Username input visible
-        username.style.visibility = "visible"
+        username.style.display = "block"
         // Make Quiz invisible
-        quiz.style.visibility = "hidden";
+        quiz.style.display = "none";
 
         // function for the submit button 
         submit.addEventListener("click", function(e){
@@ -233,8 +233,8 @@ var useranswers = [] ;
         usernameout.textContent = localStorage.getItem("Name")
         scoreout.textContent = localStorage.getItem("Score")
         // Make Username input invisible
-        username.style.visibility = "hidden";
+        username.style.display = "none";
         // Make high score page visible
-        score.style.visibility = "visible";
+        score.style.display = "block";
 
     };
