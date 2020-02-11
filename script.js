@@ -10,8 +10,6 @@ var answerA = document.getElementById("A");
 var answerB = document.getElementById("B");
 var answerC = document.getElementById("C");
 var answerD = document.getElementById("D");
-var usernameout = document.getElementById("username")
-var scoreout = document.getElementById("points")
 var usernameform =document.getElementById("usernameform")
 var correct = ["define", "indexify", "At the bottom of the Body","Application Programming Interface", "function", "DOM Manipulation", "Invoke it", "Object", "+", "All of the above"];
 var useranswers = [] ;
@@ -199,7 +197,11 @@ var useranswers = [] ;
         // function for the submit button 
         submit.addEventListener("click", function(e){
          e.preventDefault();
-    
+            // Take value and put it into local storage 
+            var userArray = []
+            userArray.push(usernamein.value)
+            localStorage.setItem("Name", userArray);
+            console.log(userArray);
             highscore();
         });
 
@@ -209,9 +211,30 @@ var useranswers = [] ;
 
     // // Display the High Score Page 
     function highscore(){
+        // compare users answer array to the correct answer array 
+            var final = 0
+            for(let j = 0; j<correct.length; j++){
+            // if they are correct, plus one point
+                if(correct[j] == useranswers[j]){
+                    final++
+                };
+            };
+            
+             var finalArray = []
+             finalArray.push(final)
+             console.log(finalArray)
+
+        // Push final score to local storage
+        localStorage.setItem("Score", finalArray);
+
+        var usernameout = document.getElementById("username")
+        var scoreout = document.getElementById("points")
+        // Display everyone's scores and names in the high score table
+        usernameout.textContent = localStorage.getItem("Name")
+        scoreout.textContent = localStorage.getItem("Score")
         // Make Username input invisible
-        username.style.visibility = "hidden"
+        username.style.visibility = "hidden";
         // Make high score page visible
-        score.style.visibility = "visible"
+        score.style.visibility = "visible";
 
     };
