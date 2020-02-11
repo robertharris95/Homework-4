@@ -1,5 +1,6 @@
 var timeEl = document.querySelector(".time");
 var start = document.getElementById('start');
+var submit = document.getElementById('submit');
 var quiz = document.getElementById('quiz');
 var score = document.getElementById('score');
 var username= document.getElementById("name");
@@ -14,7 +15,6 @@ var scoreout = document.getElementById("points")
 var usernameform =document.getElementById("usernameform")
 var correct = ["define", "indexify", "At the bottom of the Body","Application Programming Interface", "function", "DOM Manipulation", "Invoke it", "Object", "+", "All of the above"];
 var useranswers = [] ;
-var i = 0;
 
 // Quiz materials
     var exam = [
@@ -84,28 +84,15 @@ var i = 0;
 
 
 
+
+
+
 // Username reveal
-    start.addEventListener("click", input());
-
-
-// Function to start Username input 
-    function input() {
-        
-        if(usernamein.value.length !== 0){
-        // Quiz start 
-        startQuiz();
-        }
-
-        else if (usernamein.value.length == 0){
-            // Make Username input visible
-            username.style.visibility = "visible";
-            // input();
-        }
-    };
+    start.addEventListener("click", function(e){;
 
 
 // Function to start the quiz and run it
-    function startQuiz(){
+
         // Make Username input invisible
         username.style.visibility = "hidden"
         // Make Quiz visible
@@ -123,85 +110,108 @@ var i = 0;
 
             if(secondsLeft === 0 || i==10) {
             clearInterval(timerInterval);
-            highscore();
+            input();
             }
-        }, 1000);
+        }, 1000)};
      
+
+
+
+
         // Ask Questions in order 
-        for( i =0; i<11;i){
+        for( i =0; i<11;){
             question.textContent = exam[i].q;
             answerA.textContent = exam[i].a.a;
             answerB.textContent = exam[i].a.b;
             answerC.textContent = exam[i].a.c;
             answerD.textContent = exam[i].a.d;
-            console.log(question.textContent);
 
             // Buttons on Answers send responses to useranswers array 
             answerA.addEventListener("click", function(e){
+                buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerA.textContent);
                 console.log(useranswers);
+                // Next Question 
+                i++;
+                question.textContent = exam[i].q;
+                answerA.textContent = exam[i].a.a;
+                answerB.textContent = exam[i].a.b;
+                answerC.textContent = exam[i].a.c;
+                answerD.textContent = exam[i].a.d;
             });
+
             answerB.addEventListener("click", function(e){
+                buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerB.textContent);
                 console.log(useranswers);
+                // Next Question 
+                i++;
+                question.textContent = exam[i].q;
+                answerA.textContent = exam[i].a.a;
+                answerB.textContent = exam[i].a.b;
+                answerC.textContent = exam[i].a.c;
+                answerD.textContent = exam[i].a.d;
             });
+
             answerC.addEventListener("click", function(e){
-            e.preventDefault();
+                 buttonpress = true
+                e.preventDefault();
                 useranswers.push(answerC.textContent);
                 console.log(useranswers);
+                // Next Question 
+                i++;
+                question.textContent = exam[i].q;
+                answerA.textContent = exam[i].a.a;
+                answerB.textContent = exam[i].a.b;
+                answerC.textContent = exam[i].a.c;
+                answerD.textContent = exam[i].a.d;
             });
 
             answerD.addEventListener("click", function(e){
+                 buttonpress = true
                 e.preventDefault();
                 useranswers.push(answerD.textContent);
                 console.log(useranswers);
-            });
-            
-            if(useranswers[i].length == 0){
-        break;
-            }
-
-            else{
+                // Next Question 
                 i++;
-            }
-        }
+                question.textContent = exam[i].q;
+                answerA.textContent = exam[i].a.a;
+                answerB.textContent = exam[i].a.b;
+                answerC.textContent = exam[i].a.c;
+                answerD.textContent = exam[i].a.d;
+            });
+            break;
     }
         setTime();
-    };
+    
+    });
 
 
-
-
-
- // To send you to the score page and run it
-    function highscore(){
+    // Make the Username input visible 
+    function input(){
+        // Make Username input visible
+        username.style.visibility = "visible"
         // Make Quiz invisible
-        quiz.style.display = "none";
+        quiz.style.visibility = "hidden";
 
-        // Make Score Page visible
-        score.style.visibility = "visible";
-        var total = 0
-
-        for(let j =0; j<11; j++){
-
-            if(correct[j] == useranswers[j]){
-                total++;
-            };
-
-        }
-
-        // To store scores for later 
-        localStorage.setItem("User", usernamein.value);
-        localStorage.setItem("finalScore", total.value);
-
-        // To display scores 
-        scoreout.textContent = localStorage.getItem("finalScore");
-         usernameout.textContent = localStorage.getItem("User");
-         
+        // function for the submit button 
+        submit.addEventListener("click", function(e){
+         e.preventDefault();
+    
+            highscore();
+        });
 
 
     };
 
-   console.log(exam)
+
+    // // Display the High Score Page 
+    function highscore(){
+        // Make Username input invisible
+        username.style.visibility = "hidden"
+        // Make high score page visible
+        score.style.visibility = "visible"
+
+    };
